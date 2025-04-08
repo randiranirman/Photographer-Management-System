@@ -15,6 +15,18 @@ public class User {
 
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
     public String toDataString(){
         return username + "," + password+ "," + role
                 ;
