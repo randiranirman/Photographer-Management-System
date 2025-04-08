@@ -1,5 +1,6 @@
 package org.example.crudapplication.sevlets;
 
+import org.example.crudapplication.Photographer;
 import org.example.crudapplication.User;
 
 import java.io.*;
@@ -42,4 +43,29 @@ public class PhotographerFileHandler {
         return photographers;
     }
 
+
+
+
+    public boolean deletePhotographer(String username) {
+        boolean deleted = false;
+        ArrayList<User> photographers = getAllPhotographers();
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (User photographer : photographers) {
+                if (!photographer.getUsername().equals(username)) {
+                    writer.write(photographer.getUsername() + "," + photographer.getPassword() + "," + photographer.getRole());
+                    writer.newLine();
+                } else {
+                    deleted = true;
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return deleted;
+    }
+
+
 }
+

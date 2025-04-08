@@ -34,7 +34,7 @@ public class AdminServlet extends HttpServlet {
 
 
     }
-    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws  IOException, ServletException {
+    protected void doPost( HttpServletRequest request, HttpServletResponse response ) throws  IOException, ServletException {
 
 
         String username  = request.getParameter("username");
@@ -47,6 +47,28 @@ public class AdminServlet extends HttpServlet {
 
          response.getWriter().write("photographer added succsesfuly");
 
+
+
+    }
+    protected  void doDelete(HttpServletRequest request , HttpServletResponse response) throws IOException {
+        String username= request.getParameter("username");
+
+        if( username == null || username.trim().isEmpty()){
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("username parameter is required");
+            return ;
+
+        }
+
+        boolean deleted = handler.deletePhotographer(username);
+        if(deleted){
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.getWriter().write("photographer deleted succefully");
+
+        }else{
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            response.getWriter().write("Photographer with username '" + username + "' not found");
+        }
 
 
     }
