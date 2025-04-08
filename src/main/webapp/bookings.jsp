@@ -3,13 +3,17 @@
 <head>
     <title>Book an Appointment</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+        import {createBooking} from "./bookingService.js";
+        window.createBooking= createBooking;
+    </script>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
 <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Book a Photographer</h2>
 
-    <form action="/book" method="post" class="space-y-4">
+    <form  method="post" class="space-y-4">
         <!-- Customer Name -->
         <div>
             <label for="customerName" class="block text-sm font-medium text-gray-700">Your Name</label>
@@ -26,7 +30,7 @@
 
         <!-- Submit Button -->
         <div>
-            <button type="submit"
+            <button type="submit" onclick="createBooking(); return false;"
                     class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition duration-200">
                 Book Appointment
             </button>

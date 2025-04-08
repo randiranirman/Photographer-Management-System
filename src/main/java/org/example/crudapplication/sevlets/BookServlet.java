@@ -22,14 +22,14 @@ public class BookServlet extends HttpServlet
     private final BookFileHandler handler = new BookFileHandler()
 ;
 
-    protected void doPost(HttpServletResponse response , HttpServletRequest request) throws IOException, ServletException{
+    protected void doPost(HttpServletRequest request , HttpServletResponse response) throws IOException, ServletException{
         String customerName = request.getParameter("customerName");
         String photographerName = request.getParameter("photographerName");
 
 
         if( customerName == null ||  photographerName == null){
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().write("Missing customer or photographer  nam e");
+            response.getWriter().write("Missing customer or photographer  name");
         }
         Customer customer= new Customer(customerName);
         Photographer photographer  = new Photographer(photographerName);

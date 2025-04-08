@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" >
         import {createPhotographer} from "./adminservice.js";
+        import {deletePhotographer} from "./adminservice.js";
+        window.deletePhotographer = deletePhotographer;
+
         window.createPhotographer = createPhotographer;
 
 
@@ -37,7 +40,7 @@
                     <input type="password"  id="password" placeholder="Password"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
-                <button onclick="createPhotographer()" type="submit"
+                <button onclick="createPhotographer() ;return false;" type="submit"
                         class="bg-blue-600 text-white w-full py-2 rounded-lg font-medium hover:bg-blue-700 transition">
                     <i class="fas fa-plus-circle mr-2"></i>Create
                 </button>
@@ -51,10 +54,11 @@
             </h2>
             <form>
                 <div class="mb-4">
-                    <input type="text" placeholder="Photographer Username"
+                    <input id="deleteUsername" type="text" placeholder="Photographer Username"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
                 </div>
                 <button type="submit"
+                        onclick ="deletePhotographer() ;return false ;"
                         class="bg-red-600 text-white w-full py-2 rounded-lg font-medium hover:bg-red-700 transition">
                     <i class="fas fa-trash-alt mr-2"></i>Delete
                 </button>

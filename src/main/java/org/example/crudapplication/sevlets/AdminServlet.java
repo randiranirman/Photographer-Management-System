@@ -53,7 +53,7 @@ public class AdminServlet extends HttpServlet {
     protected  void doDelete(HttpServletRequest request , HttpServletResponse response) throws IOException {
         String username= request.getParameter("username");
 
-        if( username == null || username.trim().isEmpty()){
+        if( username == null ){
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().write("username parameter is required");
             return ;

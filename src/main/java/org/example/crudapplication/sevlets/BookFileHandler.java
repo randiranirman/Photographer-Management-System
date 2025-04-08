@@ -13,7 +13,8 @@ public class BookFileHandler {
     private final String FILEPATH ="booking.txt";
     public void saveBooking(String customerName , String photographerName){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILEPATH, true))) {
-            writer.write(customerName + "," + photographerName);
+            System.out.println(customerName + ' ' + photographerName);
+            writer.write(customerName + "booked " + photographerName);
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
