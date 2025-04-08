@@ -13,3 +13,11 @@ export const createPhotgrapher = async ( ) => {
 
 
 }
+
+
+export const getAllUsers =  async () => {
+
+
+
+
+}

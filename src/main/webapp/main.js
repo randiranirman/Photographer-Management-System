@@ -29,4 +29,14 @@ export const signup = async () => {
         window.location.href= "./admin.jsp";
         console.log("user directed successfylly ");
     }
+    if(role ==="customer"){
+        window.location.href= "./customer.jsp";
+        console.log("user directed succesfylly ");
+
+    }
+    if(role ==="photographer"){
+        window.location.href= "./Photographer.jsp";
+        console.log("user directed succesfylly ");
+
+    }
 };

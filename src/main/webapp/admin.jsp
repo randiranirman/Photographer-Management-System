@@ -5,31 +5,55 @@
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 font-sans min-h-screen flex items-center justify-center">
-<div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-xl">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Admin Dashboard</h1>
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 min-h-screen flex items-center justify-center font-sans">
 
-    <div class="space-y-6">
-        <!-- Create Photographer Section -->
-        <div class="bg-gray-50 p-4 rounded-xl shadow-md">
-            <h2 class="text-xl font-semibold mb-2 text-gray-700">Create Photographer</h2>
+<div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl">
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-8 text-center">
+        <i class="fas fa-user-shield text-blue-600 mr-2"></i>Admin Dashboard
+    </h1>
+
+    <div class="space-y-8">
+        <!-- Create Photographer -->
+        <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-200">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i class="fas fa-user-plus text-green-500 mr-2"></i>Create Photographer
+            </h2>
             <form>
-                <input type="text" placeholder="Username" class="w-full mb-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <input type="password" placeholder="Password" class="w-full mb-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition w-full">Create</button>
+                <div class="mb-4">
+                    <input type="text" placeholder="Username"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div class="mb-4">
+                    <input type="password" placeholder="Password"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <button type="submit"
+                        class="bg-blue-600 text-white w-full py-2 rounded-lg font-medium hover:bg-blue-700 transition">
+                    <i class="fas fa-plus-circle mr-2"></i>Create
+                </button>
             </form>
         </div>
 
-        <!-- Delete Photographer Section -->
-        <div class="bg-gray-50 p-4 rounded-xl shadow-md">
-            <h2 class="text-xl font-semibold mb-2 text-gray-700">Delete Photographer</h2>
+        <!-- Delete Photographer -->
+        <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-200">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i class="fas fa-user-times text-red-500 mr-2"></i>Delete Photographer
+            </h2>
             <form>
-                <input type="text" placeholder="Photographer Username" class="w-full mb-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
-                <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition w-full">Delete</button>
+                <div class="mb-4">
+                    <input type="text" placeholder="Photographer Username"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
+                </div>
+                <button type="submit"
+                        class="bg-red-600 text-white w-full py-2 rounded-lg font-medium hover:bg-red-700 transition">
+                    <i class="fas fa-trash-alt mr-2"></i>Delete
+                </button>
             </form>
         </div>
     </div>
 </div>
+
 </body>
 </html>

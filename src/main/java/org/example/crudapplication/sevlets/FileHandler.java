@@ -3,9 +3,10 @@ package org.example.crudapplication.sevlets;
 import org.example.crudapplication.User;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class FileHandler {
-    private static final String DATA_FILE = "photographer.txt"; // File location
+    private static final String DATA_FILE = "users.txt"; // File location
 
     // Appends a new user to the file
     public void appendUser(User user) throws IOException {
@@ -19,6 +20,15 @@ public class FileHandler {
             bw.write(user.toDataString());
             bw.newLine();
         }
+    }
+
+    public ArrayList<User> getAllUsers(){
+         ArrayList<User> users = new ArrayList<>();
+
+
+
+         return  users;
+
     }
 
     // Deletes a user from the file based on username and role
