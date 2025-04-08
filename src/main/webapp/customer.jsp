@@ -11,6 +11,7 @@
     <div class="space-x-4">
         <a href="bookings.jsp" class="text-gray-700 hover:text-blue-600 font-medium">Make Booking</a>
         <a href="viewBookings.jsp" class="text-gray-700 hover:text-blue-600 font-medium">View Bookings</a>
+        <a href="ratings.jsp" class="text-gray-700 hover:text-blue-600 font-medium">View Ratings</a>
         <a href="index.jsp" class="text-red-600 hover:text-red-800 font-medium">Logout</a>
     </div>
 </nav>
